@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body>
+<form id = "myForm" action="/save" method="GET">
+    <table>
+
+        <tr>
+            <td><h2>
+                Username: <input id="username" name="username" type="text"/>
+            </h2>
+
+            </td>
+        </tr>
+        <tr>
+            <td><h2>
+                Password: <input id="password" name="password" type="password"/>
+            </h2>
+            </td>
+        </tr>
+        <tr>
+            <td><h2>
+                Email: <input id="email" name="email" type="email"/>
+            </h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td><h2>
+                <input id="token" name="token" type="hidden"/>
+            </h2>
+            </td>
+        </tr>
+        <tr>
+            <td><h3>
+                <button class="g-recaptcha"
+                        data-sitekey="6Lf_07QZAAAAAN83FzKzOaIStEQIZ8bJr5sktOt3"
+                        data-callback='onSubmit'
+                        data-action='submit'>Submit</button>
+            </h3>
+
+            </td>
+        </tr>
+
+    </table>
+
+
+</form>
+<script>
+   function onSubmit(token) {
+     console.log(token);
+     console.log('Venkata');
+     document.getElementById("token").value = token;
+     console.log(document.getElementById("token"));
+     document.getElementById("myForm").submit();
+     document.getElementById("demo-form").submit();
+   }
+ </script>
+</body>
+</html>
